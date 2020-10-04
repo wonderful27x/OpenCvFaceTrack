@@ -84,7 +84,7 @@ Java_com_example_wyopencv_WonderfulOpenCv_renderFrameNative(JNIEnv *env, jobject
     uint8_t *rgb = wonderfulOpenCv->nv21ToRgb(reinterpret_cast<uint8_t *>(yuv), width, height);
     //rgb转mat
     Mat frame = wonderfulOpenCv->rgb2Mat(rgb,width,height);
-    //TODO:人脸追踪（调用这个函数使tracker run起来之后，所有的代码都被阻塞住了，甚至连java层的camera回调都被阻塞了！！！）
+    //TODO:人脸追踪（调用这个函数使tracker run起来之后，所有的代码都被阻塞住了，甚至连java层的camera回调都被阻塞了！！！）（问题已解决，代码写错了！！！）
     wonderfulOpenCv->dynamicFaceCheck(frame);
     //mat转rgb
     rgb = wonderfulOpenCv->mat2rgb(frame,0);
